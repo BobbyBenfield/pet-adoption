@@ -41,22 +41,19 @@ function createAgeText(birthYear) {
 
 }
 
+const allButtons = document.querySelectorAll(".pet-filter button")
 
-function filterPets() {
-  //this is where we filter the pets based on the button clicked
+//pet filter button code
+allButtons.forEach(el => {
+  el.addEventListener("click", handleButtonClick)
+})
 
+function handleButtonClick(e) {
+  //remove active class from any and all buttons
+  allButtons.forEach(el => el.classList.remove("active"))
+
+  //add active class to specific button that was clicked
+  e.target.classList.add("active")
+
+  //actually filter the pets down below
 }
-
-
-
-document.querySelector("#all-pets").addEventListener("click", function () {
-  //do stuff// 
-})
-
-document.querySelector("#only-dogs").addEventListener("click", function () {
-  //do stuff// 
-})
-
-document.querySelector("#only-cats").addEventListener("click", function () {
-  //do stuff// 
-})
